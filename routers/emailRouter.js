@@ -15,7 +15,7 @@ emailRouter
       },
     });
 
-    const mailBodyUrl = `https://file-sharing-app-1.s3.ap-south-1.amazonaws.com/public/${req.body.fileName}`;
+    const mailBodyUrl = `https://file-sharing-app-1.s3.ap-south-1.amazonaws.com/${req.body.fileName}`;
     const mailBody = `<p>Your file has been uploaded successfully! You can download your file from<p/><i>${mailBodyUrl}<i/>`;
 
     const mailOptions = {
