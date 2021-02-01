@@ -8,12 +8,15 @@ const cors = require("cors");
 const emailRouter = require("./routers/emailRouter");
 const fileRouter = require("./routers/fileRouter");
 
-
 const app = express();
 app.set("port", process.env.PORT || 5000);
 
+const corsOptions = {
+  origin: "https://file-sharing.netlify.app",
+};
+
 app
-  .use(cors())
+  .use(cors(corsOptions))
   .use(fileUpload())
   .use("/file", fileRouter)
   .use(bodyParser.json())
