@@ -10,6 +10,6 @@ app.set("port", process.env.PORT || 5000);
 
 app
   .use(cors())
-  .use(bodyParser.json())
+  // .use(bodyParser.json())
   .use("/email", emailRouter)
   .listen(app.get("port"));
